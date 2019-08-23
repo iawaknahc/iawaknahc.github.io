@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>regex cheatsheet</title>
+<style>
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: monospace;
+  font-size: 16px;
+  text-align: center;
+}
+
+th, td {
+  border: 2px solid black;
+  padding: 8px;
+}
+
+th:nth-child(2), td:nth-child(2) {
+  background-color: lightblue;
+}
+
+th:nth-child(3), td:nth-child(3) {
+  background-color: pink;
+}
+
+th:nth-child(4), td:nth-child(4) {
+  background-color: yellow;
+}
+
+th:nth-child(5), td:nth-child(5) {
+  background-color: orange;
+}
+
+th:nth-child(6), td:nth-child(6) {
+  background-color: aquamarine;
+}
+
+th:nth-child(7), td:nth-child(7) {
+  background-color: bisque;
+}
+
+th:nth-child(8), td:nth-child(8) {
+  background-color: burlywood;
+}
+
+</style>
+</head>
+<body>
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>POSIX Basic</th>
+        <th>POSIX Extended</th>
+        <th>PCRE</th>
+        <th>ECMAScript</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Start of String</td>
+        <td>^</td>
+        <td>^</td>
+        <td>^</td>
+        <td>^</td>
+      </tr>
+      <tr>
+        <td>End of String</td>
+        <td>$</td>
+        <td>$</td>
+        <td>$</td>
+        <td>$</td>
+      </tr>
+      <tr>
+        <td>Any Character</td>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+      </tr>
+      <tr>
+        <td>[:alpha:]</td>
+        <td>[:alpha:]</td>
+        <td>[:alpha:]</td>
+        <td>[:alpha:]</td>
+        <td>[A-Za-z]</td>
+      </tr>
+      <tr>
+        <td>[:lower:]</td>
+        <td>[:lower:]</td>
+        <td>[:lower:]</td>
+        <td>[:lower:]</td>
+        <td>[a-z]</td>
+      </tr>
+      <tr>
+        <td>[:upper:]</td>
+        <td>[:upper:]</td>
+        <td>[:upper:]</td>
+        <td>[:upper:]</td>
+        <td>[A-Z]</td>
+      </tr>
+      <tr>
+        <td>[:digit:]</td>
+        <td>[:digit:]</td>
+        <td>[:digit:]</td>
+        <td>[:digit:] or \d</td>
+        <td>\d</td>
+      </tr>
+      <tr>
+        <td>[:xdigit:]</td>
+        <td>[:xdigit:]</td>
+        <td>[:xdigit:]</td>
+        <td>[:xdigit:]</td>
+        <td>[0-9A-Fa-f]</td>
+      </tr>
+      <tr>
+        <td>[:alnum:]</td>
+        <td>[:alnum:]</td>
+        <td>[:alnum:]</td>
+        <td>[:alnum:]</td>
+        <td>[0-9A-Za-z]</td>
+      </tr>
+      <tr>
+        <td>[:punct:]</td>
+        <td>[:punct:]</td>
+        <td>[:punct:]</td>
+        <td>[:punct:]</td>
+        <td>[-!"#$%&amp;'()*+,./:;<=>?@[\\\]^_`{|}~]</td>
+      </tr>
+      <tr>
+        <td>[:graph:]</td>
+        <td>[:graph:]</td>
+        <td>[:graph:]</td>
+        <td>[:graph:]</td>
+        <td>[-!"#$%&amp;'()*+,./:;<=>?@[\\\]^_`{|}~0-9A-Za-z]</td>
+      </tr>
+      <tr>
+        <td>[:print:]</td>
+        <td>[:print:]</td>
+        <td>[:print:]</td>
+        <td>[:print:]</td>
+        <td>[-!"#$%&amp;'()*+,./:;<=>?@[\\\]^_`{|}~0-9A-Za-z ]</td>
+      </tr>
+      <tr>
+        <td>[:blank:]</td>
+        <td>[:blank:]</td>
+        <td>[:blank:]</td>
+        <td>[:blank:]</td>
+        <td>[ \t]</td>
+      </tr>
+      <tr>
+        <td>[:space:]</td>
+        <td>[:space:]</td>
+        <td>[:space:]</td>
+        <td>[:space:] or \s</td>
+        <td>\s</td>
+      </tr>
+      <tr>
+        <td>[:cntrl:]</td>
+        <td>[:cntrl:]</td>
+        <td>[:cntrl:]</td>
+        <td>[:cntrl:]</td>
+        <td>[\x00-\x1f\x7f]</td>
+      </tr>
+      <tr>
+        <td>Group</td>
+        <td>\(\)</td>
+        <td>()</td>
+        <td>()</td>
+        <td>()</td>
+      </tr>
+      <tr>
+        <td>Zero or More</td>
+        <td>*</td>
+        <td>*</td>
+        <td>*</td>
+        <td>*</td>
+      </tr>
+      <tr>
+        <td>One or More</td>
+        <td></td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
+      </tr>
+      <tr>
+        <td>Exact N</td>
+        <td>\{n\}</td>
+        <td>{n}</td>
+        <td>{n}</td>
+        <td>{n}</td>
+      </tr>
+      <tr>
+        <td>At Least N</td>
+        <td>\{n,\}</td>
+        <td>{n,}</td>
+        <td>{n,}</td>
+        <td>{n,}</td>
+      </tr>
+      <tr>
+        <td>At least N and At Most M</td>
+        <td>\{n,m\}</td>
+        <td>{n,m}</td>
+        <td>{n,m}</td>
+        <td>{n,m}</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+</html>
