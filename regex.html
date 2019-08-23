@@ -60,27 +60,6 @@ th:nth-child(8), td:nth-child(8) {
     </thead>
     <tbody>
       <tr>
-        <td>Start of String</td>
-        <td>^</td>
-        <td>^</td>
-        <td>^</td>
-        <td>^</td>
-      </tr>
-      <tr>
-        <td>End of String</td>
-        <td>$</td>
-        <td>$</td>
-        <td>$</td>
-        <td>$</td>
-      </tr>
-      <tr>
-        <td>Any Character</td>
-        <td>.</td>
-        <td>.</td>
-        <td>.</td>
-        <td>.</td>
-      </tr>
-      <tr>
         <td>[:alpha:]</td>
         <td>[:alpha:]</td>
         <td>[:alpha:]</td>
@@ -165,7 +144,28 @@ th:nth-child(8), td:nth-child(8) {
         <td>[\x00-\x1f\x7f]</td>
       </tr>
       <tr>
-        <td>Group</td>
+        <td>Start of String</td>
+        <td>^</td>
+        <td>^</td>
+        <td>^</td>
+        <td>^</td>
+      </tr>
+      <tr>
+        <td>End of String</td>
+        <td>$</td>
+        <td>$</td>
+        <td>$</td>
+        <td>$</td>
+      </tr>
+      <tr>
+        <td>Any Character</td>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+      </tr>
+      <tr>
+        <td>Capturing Group</td>
         <td>\(\)</td>
         <td>()</td>
         <td>()</td>
@@ -177,13 +177,6 @@ th:nth-child(8), td:nth-child(8) {
         <td>*</td>
         <td>*</td>
         <td>*</td>
-      </tr>
-      <tr>
-        <td>One or More</td>
-        <td></td>
-        <td>+</td>
-        <td>+</td>
-        <td>+</td>
       </tr>
       <tr>
         <td>Exact N</td>
@@ -206,6 +199,46 @@ th:nth-child(8), td:nth-child(8) {
         <td>{n,m}</td>
         <td>{n,m}</td>
       </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td>Zero or One</td>
+        <td>\{0,1\}</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+      </tr>
+      <tr>
+        <td>One or More</td>
+        <td>\{1,\}</td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
+      </tr>
+      <tr>
+        <td>Alternation</td>
+        <td></td>
+        <td>|</td>
+        <td>|</td>
+        <td>|</td>
+      </tr>
+    </tbody>
+    <tbody>
+      <tr>
+        <td>Non-capturing Group</td>
+        <td></td>
+        <td></td>
+        <td>(?:)</td>
+        <td>(?:)</td>
+      </tr>
+      <!-- positive lookahead assertion -->
+      <!-- negative lookahead assertion -->
+      <!-- positive lookbehind assertion -->
+      <!-- negative lookbehind assertion -->
+      <!-- Add RE2 -->
+      <!-- Add Java -->
+      <!-- Add Python -->
+      <!-- Add VIM -->
     </tbody>
   </table>
 </body>
