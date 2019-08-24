@@ -87,132 +87,132 @@ th:nth-child(9), td:nth-child(9) {
     <tbody>
       <tr>
         <td>[A-Za-z]</td>
-        <td>[:alpha:]</td>
-        <td>[:alpha:]</td>
-        <td>[:alpha:]</td>
+        <td>[[:alpha:]]</td>
+        <td>[[:alpha:]]</td>
+        <td>[[:alpha:]]</td>
         <td></td>
-        <td>[:alpha:]</td>
+        <td>[[:alpha:]]</td>
         <td>\p{Alpha}</td>
         <td></td>
         <td>\a</td>
       </tr>
       <tr>
         <td>[a-z]</td>
-        <td>[:lower:]</td>
-        <td>[:lower:]</td>
-        <td>[:lower:]</td>
+        <td>[[:lower:]]</td>
+        <td>[[:lower:]]</td>
+        <td>[[:lower:]]</td>
         <td></td>
-        <td>[:lower:]</td>
+        <td>[[:lower:]]</td>
         <td>\p{Lower}</td>
         <td></td>
         <td>\l</td>
       </tr>
       <tr>
         <td>[A-Z]</td>
-        <td>[:upper:]</td>
-        <td>[:upper:]</td>
-        <td>[:upper:]</td>
+        <td>[[:upper:]]</td>
+        <td>[[:upper:]]</td>
+        <td>[[:upper:]]</td>
         <td></td>
-        <td>[:upper:]</td>
+        <td>[[:upper:]]</td>
         <td>\p{Upper}</td>
         <td></td>
         <td>\u</td>
       </tr>
       <tr>
         <td>[0-9]</td>
-        <td>[:digit:]</td>
-        <td>[:digit:]</td>
-        <td>[:digit:] or \d</td>
+        <td>[[:digit:]]</td>
+        <td>[[:digit:]]</td>
+        <td>[[:digit:]] or \d</td>
         <td>\d</td>
-        <td>[:digit:] or \d</td>
+        <td>[[:digit:]] or \d</td>
         <td>\p{Digit} or \d</td>
         <td>\d</td>
         <td>\d</td>
       </tr>
       <tr>
         <td>[0-9A-Fa-f]</td>
-        <td>[:xdigit:]</td>
-        <td>[:xdigit:]</td>
-        <td>[:xdigit:]</td>
+        <td>[[:xdigit:]]</td>
+        <td>[[:xdigit:]]</td>
+        <td>[[:xdigit:]]</td>
         <td></td>
-        <td>[:xdigit:]</td>
+        <td>[[:xdigit:]]</td>
         <td>\p{XDigit}</td>
         <td></td>
         <td>\x</td>
       </tr>
       <tr>
         <td>[0-9A-Za-z]</td>
-        <td>[:alnum:]</td>
-        <td>[:alnum:]</td>
-        <td>[:alnum:]</td>
+        <td>[[:alnum:]]</td>
+        <td>[[:alnum:]]</td>
+        <td>[[:alnum:]]</td>
         <td></td>
-        <td>[:alnum:]</td>
+        <td>[[:alnum:]]</td>
         <td>\p{Alnum}</td>
         <td></td>
         <td></td>
       </tr>
       <tr>
         <td>[-!"#$%&amp;'()*+,./:;<=>?@[\\\]^_`{|}~]</td>
-        <td>[:punct:]</td>
-        <td>[:punct:]</td>
-        <td>[:punct:]</td>
+        <td>[[:punct:]]</td>
+        <td>[[:punct:]]</td>
+        <td>[[:punct:]]</td>
         <td></td>
-        <td>[:punct:]</td>
+        <td>[[:punct:]]</td>
         <td>\p{Punct}</td>
         <td></td>
         <td></td>
       </tr>
       <tr>
         <td>[-!"#$%&amp;'()*+,./:;<=>?@[\\\]^_`{|}~0-9A-Za-z]</td>
-        <td>[:graph:]</td>
-        <td>[:graph:]</td>
-        <td>[:graph:]</td>
+        <td>[[:graph:]]</td>
+        <td>[[:graph:]]</td>
+        <td>[[:graph:]]</td>
         <td></td>
-        <td>[:graph:]</td>
+        <td>[[:graph:]]</td>
         <td>\p{Graph}</td>
         <td></td>
         <td></td>
       </tr>
       <tr>
         <td>[-!"#$%&amp;'()*+,./:;<=>?@[\\\]^_`{|}~0-9A-Za-z ]</td>
-        <td>[:print:]</td>
-        <td>[:print:]</td>
-        <td>[:print:]</td>
+        <td>[[:print:]]</td>
+        <td>[[:print:]]</td>
+        <td>[[:print:]]</td>
         <td></td>
-        <td>[:print:]</td>
+        <td>[[:print:]]</td>
         <td>\p{Print}</td>
         <td></td>
         <td></td>
       </tr>
       <tr>
         <td>SP, HT</td>
-        <td>[:blank:]</td>
-        <td>[:blank:]</td>
-        <td>[:blank:]</td>
+        <td>[[:blank:]]</td>
+        <td>[[:blank:]]</td>
+        <td>[[:blank:]]</td>
         <td>[ \t]</td>
-        <td>[:blank:]</td>
+        <td>[[:blank:]]</td>
         <td>\p{Blank}</td>
         <td>[ \t]</td>
         <td>\s</td>
       </tr>
       <tr>
         <td>SP, HT, CR, LF, FF, VT</td>
-        <td>[:space:]</td>
-        <td>[:space:]</td>
-        <td>[:space:] or \s</td>
+        <td>[[:space:]]</td>
+        <td>[[:space:]]</td>
+        <td>[[:space:]] or \s</td>
         <td>\s</td>
-        <td>[:space:] or \s</td>
-        <td>\p{Space}</td>
+        <td>[[:space:]] or \s</td>
+        <td>\p{Space} or \s</td>
         <td>\s</td>
         <td></td>
       </tr>
       <tr>
         <td>ASCII 0x00 - 0x1f, 0x7f</td>
-        <td>[:cntrl:]</td>
-        <td>[:cntrl:]</td>
-        <td>[:cntrl:]</td>
+        <td>[[:cntrl:]]</td>
+        <td>[[:cntrl:]]</td>
+        <td>[[:cntrl:]]</td>
         <td>[\x00-\x1f\x7f]</td>
-        <td>[:cntrl:]</td>
+        <td>[[:cntrl:]]</td>
         <td>\p{Cntrl}</td>
         <td>[\x00-\x1f\x7f]</td>
         <td></td>
