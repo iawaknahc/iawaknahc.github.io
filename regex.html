@@ -17,32 +17,54 @@ th, td {
   padding: 8px;
 }
 
+/* POSIX Basic */
 th:nth-child(2), td:nth-child(2) {
   background-color: lightblue;
 }
 
+/* POSIX Extended */
 th:nth-child(3), td:nth-child(3) {
   background-color: pink;
 }
 
+/* Perl */
 th:nth-child(4), td:nth-child(4) {
-  background-color: yellow;
+  color: white;
+  background-color: #0073a1;
 }
 
+/* JavaScript */
 th:nth-child(5), td:nth-child(5) {
-  background-color: orange;
+  color: black;
+  /* https://github.com/colorjs/javascript-yellow */
+  background-color: #f7df1e;
 }
 
+/* Go */
 th:nth-child(6), td:nth-child(6) {
-  background-color: aquamarine;
+  color: white;
+  /* https://golang.org/s/brandbook */
+  background-color: #00ADD8;
 }
 
+/* Java */
 th:nth-child(7), td:nth-child(7) {
-  background-color: bisque;
+  color: white;
+  /* http://www.oracle.com/us/technologies/java/java-licensing-logo-guidelines-1908204.pdf */
+  background-color: #ED8B00;
 }
 
+/* Python */
 th:nth-child(8), td:nth-child(8) {
-  background-color: burlywood;
+  color: white;
+  /* From the website header */
+  background-color: #2b5b84;
+}
+
+/* VIM */
+th:nth-child(9), td:nth-child(9) {
+  color: white;
+  background-color: #007f00;
 }
 
 </style>
@@ -54,104 +76,164 @@ th:nth-child(8), td:nth-child(8) {
         <th></th>
         <th>POSIX Basic</th>
         <th>POSIX Extended</th>
-        <th>PCRE</th>
-        <th>ECMAScript</th>
+        <th>Perl</th>
+        <th>JavaScript</th>
+        <th>Go</th>
+        <th>Java</th>
+        <th>Python</th>
+        <th>VIM</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>[:alpha:]</td>
-        <td>[:alpha:]</td>
-        <td>[:alpha:]</td>
-        <td>[:alpha:]</td>
         <td>[A-Za-z]</td>
+        <td>[:alpha:]</td>
+        <td>[:alpha:]</td>
+        <td>[:alpha:]</td>
+        <td></td>
+        <td>[:alpha:]</td>
+        <td>\p{Alpha}</td>
+        <td></td>
+        <td>\a</td>
       </tr>
       <tr>
-        <td>[:lower:]</td>
-        <td>[:lower:]</td>
-        <td>[:lower:]</td>
-        <td>[:lower:]</td>
         <td>[a-z]</td>
+        <td>[:lower:]</td>
+        <td>[:lower:]</td>
+        <td>[:lower:]</td>
+        <td></td>
+        <td>[:lower:]</td>
+        <td>\p{Lower}</td>
+        <td></td>
+        <td>\l</td>
       </tr>
       <tr>
-        <td>[:upper:]</td>
-        <td>[:upper:]</td>
-        <td>[:upper:]</td>
-        <td>[:upper:]</td>
         <td>[A-Z]</td>
+        <td>[:upper:]</td>
+        <td>[:upper:]</td>
+        <td>[:upper:]</td>
+        <td></td>
+        <td>[:upper:]</td>
+        <td>\p{Upper}</td>
+        <td></td>
+        <td>\u</td>
       </tr>
       <tr>
-        <td>[:digit:]</td>
+        <td>[0-9]</td>
         <td>[:digit:]</td>
         <td>[:digit:]</td>
         <td>[:digit:] or \d</td>
         <td>\d</td>
+        <td>[:digit:] or \d</td>
+        <td>\p{Digit} or \d</td>
+        <td>\d</td>
+        <td>\d</td>
       </tr>
       <tr>
-        <td>[:xdigit:]</td>
-        <td>[:xdigit:]</td>
-        <td>[:xdigit:]</td>
-        <td>[:xdigit:]</td>
         <td>[0-9A-Fa-f]</td>
+        <td>[:xdigit:]</td>
+        <td>[:xdigit:]</td>
+        <td>[:xdigit:]</td>
+        <td></td>
+        <td>[:xdigit:]</td>
+        <td>\p{XDigit}</td>
+        <td></td>
+        <td>\x</td>
       </tr>
       <tr>
-        <td>[:alnum:]</td>
-        <td>[:alnum:]</td>
-        <td>[:alnum:]</td>
-        <td>[:alnum:]</td>
         <td>[0-9A-Za-z]</td>
+        <td>[:alnum:]</td>
+        <td>[:alnum:]</td>
+        <td>[:alnum:]</td>
+        <td></td>
+        <td>[:alnum:]</td>
+        <td>\p{Alnum}</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
-        <td>[:punct:]</td>
-        <td>[:punct:]</td>
-        <td>[:punct:]</td>
-        <td>[:punct:]</td>
         <td>[-!"#$%&amp;'()*+,./:;<=>?@[\\\]^_`{|}~]</td>
+        <td>[:punct:]</td>
+        <td>[:punct:]</td>
+        <td>[:punct:]</td>
+        <td></td>
+        <td>[:punct:]</td>
+        <td>\p{Punct}</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
-        <td>[:graph:]</td>
-        <td>[:graph:]</td>
-        <td>[:graph:]</td>
-        <td>[:graph:]</td>
         <td>[-!"#$%&amp;'()*+,./:;<=>?@[\\\]^_`{|}~0-9A-Za-z]</td>
+        <td>[:graph:]</td>
+        <td>[:graph:]</td>
+        <td>[:graph:]</td>
+        <td></td>
+        <td>[:graph:]</td>
+        <td>\p{Graph}</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
-        <td>[:print:]</td>
-        <td>[:print:]</td>
-        <td>[:print:]</td>
-        <td>[:print:]</td>
         <td>[-!"#$%&amp;'()*+,./:;<=>?@[\\\]^_`{|}~0-9A-Za-z ]</td>
+        <td>[:print:]</td>
+        <td>[:print:]</td>
+        <td>[:print:]</td>
+        <td></td>
+        <td>[:print:]</td>
+        <td>\p{Print}</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
-        <td>[:blank:]</td>
+        <td>SP, HT</td>
         <td>[:blank:]</td>
         <td>[:blank:]</td>
         <td>[:blank:]</td>
         <td>[ \t]</td>
+        <td>[:blank:]</td>
+        <td>\p{Blank}</td>
+        <td>[ \t]</td>
+        <td>\s</td>
       </tr>
       <tr>
-        <td>[:space:]</td>
+        <td>SP, HT, CR, LF, FF, VT</td>
         <td>[:space:]</td>
         <td>[:space:]</td>
         <td>[:space:] or \s</td>
         <td>\s</td>
+        <td>[:space:] or \s</td>
+        <td>\p{Space}</td>
+        <td>\s</td>
+        <td></td>
       </tr>
       <tr>
-        <td>[:cntrl:]</td>
+        <td>ASCII 0x00 - 0x1f, 0x7f</td>
         <td>[:cntrl:]</td>
         <td>[:cntrl:]</td>
         <td>[:cntrl:]</td>
         <td>[\x00-\x1f\x7f]</td>
+        <td>[:cntrl:]</td>
+        <td>\p{Cntrl}</td>
+        <td>[\x00-\x1f\x7f]</td>
+        <td></td>
       </tr>
       <tr>
-        <td>Start of String</td>
+        <td>Start of Line</td>
+        <td>^</td>
+        <td>^</td>
+        <td>^</td>
+        <td>^</td>
         <td>^</td>
         <td>^</td>
         <td>^</td>
         <td>^</td>
       </tr>
       <tr>
-        <td>End of String</td>
+        <td>End of Line</td>
+        <td>$</td>
+        <td>$</td>
+        <td>$</td>
+        <td>$</td>
         <td>$</td>
         <td>$</td>
         <td>$</td>
@@ -163,6 +245,10 @@ th:nth-child(8), td:nth-child(8) {
         <td>.</td>
         <td>.</td>
         <td>.</td>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
+        <td>.</td>
       </tr>
       <tr>
         <td>Capturing Group</td>
@@ -170,6 +256,10 @@ th:nth-child(8), td:nth-child(8) {
         <td>()</td>
         <td>()</td>
         <td>()</td>
+        <td>()</td>
+        <td>()</td>
+        <td>()</td>
+        <td>\(\)</td>
       </tr>
       <tr>
         <td>Zero or More</td>
@@ -177,6 +267,10 @@ th:nth-child(8), td:nth-child(8) {
         <td>*</td>
         <td>*</td>
         <td>*</td>
+        <td>*</td>
+        <td>*</td>
+        <td>*</td>
+        <td>* or \{}</td>
       </tr>
       <tr>
         <td>Exact N</td>
@@ -184,6 +278,10 @@ th:nth-child(8), td:nth-child(8) {
         <td>{n}</td>
         <td>{n}</td>
         <td>{n}</td>
+        <td>{n}</td>
+        <td>{n}</td>
+        <td>{n}</td>
+        <td>\{n}</td>
       </tr>
       <tr>
         <td>At Least N</td>
@@ -191,6 +289,10 @@ th:nth-child(8), td:nth-child(8) {
         <td>{n,}</td>
         <td>{n,}</td>
         <td>{n,}</td>
+        <td>{n,}</td>
+        <td>{n,}</td>
+        <td>{n,}</td>
+        <td>\{n,}</td>
       </tr>
       <tr>
         <td>At least N and At Most M</td>
@@ -198,6 +300,10 @@ th:nth-child(8), td:nth-child(8) {
         <td>{n,m}</td>
         <td>{n,m}</td>
         <td>{n,m}</td>
+        <td>{n,m}</td>
+        <td>{n,m}</td>
+        <td>{n,m}</td>
+        <td>\{n,m}</td>
       </tr>
     </tbody>
     <tbody>
@@ -207,6 +313,10 @@ th:nth-child(8), td:nth-child(8) {
         <td>?</td>
         <td>?</td>
         <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>?</td>
+        <td>\? or \=</td>
       </tr>
       <tr>
         <td>One or More</td>
@@ -214,6 +324,10 @@ th:nth-child(8), td:nth-child(8) {
         <td>+</td>
         <td>+</td>
         <td>+</td>
+        <td>+</td>
+        <td>+</td>
+        <td>+</td>
+        <td>\+</td>
       </tr>
       <tr>
         <td>Alternation</td>
@@ -221,6 +335,10 @@ th:nth-child(8), td:nth-child(8) {
         <td>|</td>
         <td>|</td>
         <td>|</td>
+        <td>|</td>
+        <td>|</td>
+        <td>|</td>
+        <td>\|</td>
       </tr>
     </tbody>
     <tbody>
@@ -230,15 +348,15 @@ th:nth-child(8), td:nth-child(8) {
         <td></td>
         <td>(?:)</td>
         <td>(?:)</td>
+        <td>(?:)</td>
+        <td>(?:)</td>
+        <td>(?:)</td>
+        <td>\%(\)</td>
       </tr>
       <!-- positive lookahead assertion -->
       <!-- negative lookahead assertion -->
       <!-- positive lookbehind assertion -->
       <!-- negative lookbehind assertion -->
-      <!-- Add RE2 -->
-      <!-- Add Java -->
-      <!-- Add Python -->
-      <!-- Add VIM -->
     </tbody>
   </table>
 </body>
