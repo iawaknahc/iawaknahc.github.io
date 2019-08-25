@@ -1,0 +1,66 @@
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: monospace;
+  font-size: 14px;
+  text-align: center;
+}
+
+th, td {
+  border: 2px solid black;
+  padding: 8px;
+}
+
+table td.unsupported {
+  background-color: black;
+}
+
+/* POSIX Basic */
+th:nth-child(2), td:nth-child(2) {
+  background-color: lightblue;
+}
+
+/* POSIX Extended */
+th:nth-child(3), td:nth-child(3) {
+  background-color: pink;
+}
+
+/* Perl */
+th:nth-child(4), td:nth-child(4) {
+  color: white;
+  background-color: #0073a1;
+}
+
+/* JavaScript */
+th:nth-child(5), td:nth-child(5) {
+  color: black;
+  /* https://github.com/colorjs/javascript-yellow */
+  background-color: #f7df1e;
+}
+
+/* Go */
+th:nth-child(6), td:nth-child(6) {
+  color: white;
+  /* https://golang.org/s/brandbook */
+  background-color: #00ADD8;
+}
+
+/* Java */
+th:nth-child(7), td:nth-child(7) {
+  color: white;
+  /* http://www.oracle.com/us/technologies/java/java-licensing-logo-guidelines-1908204.pdf */
+  background-color: #ED8B00;
+}
+
+/* Python */
+th:nth-child(8), td:nth-child(8) {
+  color: white;
+  /* From the website header */
+  background-color: #2b5b84;
+}
+
+/* VIM */
+th:nth-child(9), td:nth-child(9) {
+  color: white;
+  background-color: #007f00;
+}

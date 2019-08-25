@@ -1,0 +1,298 @@
+flavors:
+- name: POSIX Basic
+  alpha: "[[:alpha:]]"
+  lower: "[[:lower:]]"
+  upper: "[[:upper:]]"
+  digit: "[[:digit:]]"
+  xdigit: "[[:xdigit:]]"
+  alnum: "[[:alnum:]]"
+  punct: "[[:punct:]]"
+  graph: "[[:graph:]]"
+  print: "[[:print:]]"
+  blank: "[[:blank:]]"
+  whitespace: 'printf "[ \t\r\n]"'
+  space: "[[:space:]]"
+  cntrl: "[[:cntrl:]]"
+  bol: "^"
+  eol: "$"
+  any: .
+  capturing_group: '\(\)'
+  zero_or_more: "*"
+  exact_n: '\{n\}'
+  at_least_n: '\{n,\}'
+  at_least_n_and_at_most_m: '\{n,m\}'
+  zero_or_one: '\{0,1\}'
+  one_or_more: '\{1,\}'
+  alternation: false
+  non_capturing_group: false
+
+- name: POSIX Extended
+  alpha: "[[:alpha:]]"
+  lower: "[[:lower:]]"
+  upper: "[[:upper:]]"
+  digit: "[[:digit:]]"
+  xdigit: "[[:xdigit:]]"
+  alnum: "[[:alnum:]]"
+  punct: "[[:punct:]]"
+  graph: "[[:graph:]]"
+  print: "[[:print:]]"
+  blank: "[[:blank:]]"
+  whitespace: 'printf "[ \t\r\n]"'
+  space: "[[:space:]]"
+  cntrl: "[[:cntrl:]]"
+  bol: "^"
+  eol: "$"
+  any: .
+  capturing_group: ()
+  zero_or_more: "*"
+  exact_n: '{n}'
+  at_least_n: '{n,}'
+  at_least_n_and_at_most_m: '{n,m}'
+  zero_or_one: "?"
+  one_or_more: "+"
+  alternation: "|"
+  non_capturing_group: false
+
+- name: Perl
+  alpha: "[[:alpha:]]"
+  lower: "[[:lower:]]"
+  upper: "[[:upper:]]"
+  digit: '[[:digit:]] or \d'
+  xdigit: "[[:xdigit:]]"
+  alnum: "[[:alnum:]]"
+  punct: "[[:punct:]]"
+  graph: "[[:graph:]]"
+  print: "[[:print:]]"
+  blank: "[[:blank:]]"
+  whitespace: '[ \t\r\n]'
+  space: '[[:space:]] or \s'
+  cntrl: "[[:cntrl:]]"
+  bol: "^"
+  eol: "$"
+  any: .
+  capturing_group: ()
+  zero_or_more: "*"
+  exact_n: '{n}'
+  at_least_n: '{n,}'
+  at_least_n_and_at_most_m: '{n,m}'
+  zero_or_one: "?"
+  one_or_more: "+"
+  alternation: "|"
+  non_capturing_group: "(?:)"
+
+- name: JavaScript
+  alpha: ""
+  lower: ""
+  upper: ""
+  digit: '\d'
+  xdigit: ""
+  alnum: ""
+  punct: ""
+  graph: ""
+  print: ""
+  blank: '[ \t]'
+  whitespace: '[ \t\r\n]'
+  space: '\s'
+  cntrl: '[\x00-\x1f\x7f]'
+  bol: "^"
+  eol: "$"
+  any: .
+  capturing_group: ()
+  zero_or_more: "*"
+  exact_n: '{n}'
+  at_least_n: '{n,}'
+  at_least_n_and_at_most_m: '{n,m}'
+  zero_or_one: "?"
+  one_or_more: "+"
+  alternation: "|"
+  non_capturing_group: "(?:)"
+
+- name: Go
+  alpha: "[[:alpha:]]"
+  lower: "[[:lower:]]"
+  upper: "[[:upper:]]"
+  digit: '[[:digit:]] or \d'
+  xdigit: "[[:xdigit:]]"
+  alnum: "[[:alnum:]]"
+  punct: "[[:punct:]]"
+  graph: "[[:graph:]]"
+  print: "[[:print:]]"
+  blank: "[[:blank:]]"
+  whitespace: '[ \t\r\n]'
+  space: '[[:space:]] or \s'
+  cntrl: "[[:cntrl:]]"
+  bol: "^"
+  eol: "$"
+  any: .
+  capturing_group: ()
+  zero_or_more: "*"
+  exact_n: '{n}'
+  at_least_n: '{n,}'
+  at_least_n_and_at_most_m: '{n,m}'
+  zero_or_one: "?"
+  one_or_more: "+"
+  alternation: "|"
+  non_capturing_group: "(?:)"
+
+- name: Java
+  alpha: '\p{Alpha}'
+  lower: '\p{Lower}'
+  upper: '\p{Upper}'
+  digit: '\p{Digit} or \d'
+  xdigit: '\p{XDigit}'
+  alnum: '\p{Alnum}'
+  punct: '\p{Punct}'
+  graph: '\p{Graph}'
+  print: '\p{Print}'
+  blank: '\p{Blank}'
+  whitespace: '[ \t\r\n]'
+  space: '\p{Space} or \s'
+  cntrl: '\p{Cntrl}'
+  bol: "^"
+  eol: "$"
+  any: .
+  capturing_group: ()
+  zero_or_more: "*"
+  exact_n: '{n}'
+  at_least_n: '{n,}'
+  at_least_n_and_at_most_m: '{n,m}'
+  zero_or_one: "?"
+  one_or_more: "+"
+  alternation: "|"
+  non_capturing_group: "(?:)"
+
+- name: Python
+  alpha: ""
+  lower: ""
+  upper: ""
+  digit: '\d'
+  xdigit: ""
+  alnum: ""
+  punct: ""
+  graph: ""
+  print: ""
+  blank: '[ \t]'
+  whitespace: '[ \t\r\n]'
+  space: '\s'
+  cntrl: '[\x00-\x1f\x7f]'
+  bol: "^"
+  eol: "$"
+  any: .
+  capturing_group: ()
+  zero_or_more: "*"
+  exact_n: '{n}'
+  at_least_n: '{n,}'
+  at_least_n_and_at_most_m: '{n,m}'
+  zero_or_one: "?"
+  one_or_more: "+"
+  alternation: "|"
+  non_capturing_group: "(?:)"
+
+- name: VIM
+  alpha: '\a'
+  lower: '\l'
+  upper: '\u'
+  digit: '\d'
+  xdigit: '\x'
+  alnum: ""
+  punct: ""
+  graph: ""
+  print: ""
+  blank: '\s'
+  whitespace: '[ \t\r\n]'
+  space: '[ \t\r\n\%x0c\%x0b]'
+  cntrl: '[\%x00-\%x1f\%x7f]'
+  bol: "^"
+  eol: "$"
+  any: .
+  capturing_group: '\(\)'
+  zero_or_more: '* or \{}'
+  exact_n: '\{n}'
+  at_least_n: '\{n,}'
+  at_least_n_and_at_most_m: '\{n,m}'
+  zero_or_one: '\? or \='
+  one_or_more: '\+'
+  alternation: '\|'
+  non_capturing_group: '\%(\)'
+
+- name: XML Schema
+  alpha: ""
+  lower: ""
+  upper: ""
+  digit: '\d'
+  xdigit: ""
+  alnum: ""
+  punct: ""
+  graph: ""
+  print: ""
+  blank: '[ \t]'
+  whitespace: '\s'
+  space: '[ \t\r\n&#x0c&#x0b]'
+  cntrl: '[&#x00-&#x1f&#x7f]'
+  bol: false
+  eol: false
+  any: .
+  capturing_group: ()
+  zero_or_more: "*"
+  exact_n: '{n}'
+  at_least_n: '{n,}'
+  at_least_n_and_at_most_m: '{n,m}'
+  zero_or_one: "?"
+  one_or_more: "+"
+  alternation: "|"
+  non_capturing_group: false
+
+features:
+- name: alpha
+  label: "[A-Za-z]"
+- name: lower
+  label: "[a-z]"
+- name: upper
+  label: "[A-Z]"
+- name: digit
+  label: "[0-9]"
+- name: xdigit
+  label: "[0-9A-Fa-f]"
+- name: alnum
+  label: "[0-9A-Za-z]"
+- name: punct
+  label: |-
+    [-!\"#$%&'()*+,./:;<=>?@[\\\]^_`{|}~]
+- name: graph
+  label: |-
+    [-!"#$%&'()*+,./:;<=>?@[\\\]^_`{|}~0-9A-Za-z]
+- name: print
+  label: |-
+    [-!"#$%&'()*+,./:;<=>?@[\\\]^_`{|}~0-9A-Za-z ]
+- name: blank
+  label: "SP, HT"
+- name: whitespace
+  label: "SP, HT, CR, LF"
+- name: space
+  label: "SP, HT, CR, LF, FF, VT"
+- name: cntrl
+  label: "ASCII 0x00 - 0x1f, 0x7f"
+- name: bol
+  label: Start of Line
+- name: eol
+  label: End of Line
+- name: any
+  label: Any Character
+- name: capturing_group
+  label: Capturing Group
+- name: zero_or_more
+  label: Zero or More
+- name: exact_n
+  label: Exact N
+- name: at_least_n
+  label: At Least N
+- name: at_least_n_and_at_most_m
+  label: At Least N and At Most M
+- name: zero_or_one
+  label: Zero or One
+- name: one_or_more
+  label: One or More
+- name: alternation
+  label: Alternation
+- name: non_capturing_group
+  label: Non-capturing group

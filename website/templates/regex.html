@@ -1,0 +1,36 @@
+{% extends "_base.html" %}
+{% block title %}Regex Cheatsheet{% endblock %}
+{% block head %}
+{{ super() }}
+<link rel="stylesheet" href="/static/regex.css" />
+{% endblock %}
+{% block body %}
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      {% for flavor in flavors %}
+      <th>{{ flavor.name }}</th>
+      {% endfor %}
+    </tr>
+  </thead>
+  <tbody>
+    {% for feature in features %}
+    <tr>
+      <th>{{ feature.label }}</th>
+      {% for flavor in flavors %}
+      {% if flavor[feature.name] == false %}
+      <td class="unsupported"></td>
+      {% else %}
+      <td>{{ flavor[feature.name] }}</td>
+      {% endif %}
+      {% endfor %}
+    </tr>
+    {% endfor %}
+    <!-- positive lookahead assertion -->
+    <!-- negative lookahead assertion -->
+    <!-- positive lookbehind assertion -->
+    <!-- negative lookbehind assertion -->
+  </tbody>
+</table>
+{% endblock %}
