@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Regex Cheatsheet</title>
+
+<link rel="stylesheet" href="/static/regex.css" />
+</head>
+<body>
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>POSIX Basic</th>
+      <th>POSIX Extended</th>
+      <th>Perl</th>
+      <th>JavaScript</th>
+      <th>Go</th>
+      <th>Java</th>
+      <th>Python</th>
+      <th>VIM</th>
+      <th>XML Schema</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>[A-Za-z]</th>
+      <td>[[:alpha:]]</td>
+      <td>[[:alpha:]]</td>
+      <td>[[:alpha:]]</td>
+      <td></td>
+      <td>[[:alpha:]]</td>
+      <td>\p{Alpha}</td>
+      <td></td>
+      <td>\a</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>[a-z]</th>
+      <td>[[:lower:]]</td>
+      <td>[[:lower:]]</td>
+      <td>[[:lower:]]</td>
+      <td></td>
+      <td>[[:lower:]]</td>
+      <td>\p{Lower}</td>
+      <td></td>
+      <td>\l</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>[A-Z]</th>
+      <td>[[:upper:]]</td>
+      <td>[[:upper:]]</td>
+      <td>[[:upper:]]</td>
+      <td></td>
+      <td>[[:upper:]]</td>
+      <td>\p{Upper}</td>
+      <td></td>
+      <td>\u</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>[0-9]</th>
+      <td>[[:digit:]]</td>
+      <td>[[:digit:]]</td>
+      <td>[[:digit:]] or \d</td>
+      <td>\d</td>
+      <td>[[:digit:]] or \d</td>
+      <td>\p{Digit} or \d</td>
+      <td>\d</td>
+      <td>\d</td>
+      <td>\d</td>
+    </tr>
+    <tr>
+      <th>[0-9A-Fa-f]</th>
+      <td>[[:xdigit:]]</td>
+      <td>[[:xdigit:]]</td>
+      <td>[[:xdigit:]]</td>
+      <td></td>
+      <td>[[:xdigit:]]</td>
+      <td>\p{XDigit}</td>
+      <td></td>
+      <td>\x</td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>[0-9A-Za-z]</th>
+      <td>[[:alnum:]]</td>
+      <td>[[:alnum:]]</td>
+      <td>[[:alnum:]]</td>
+      <td></td>
+      <td>[[:alnum:]]</td>
+      <td>\p{Alnum}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>[-!\&#34;#$%&amp;&#39;()*+,./:;&lt;=&gt;?@[\\\]^_`{|}~]</th>
+      <td>[[:punct:]]</td>
+      <td>[[:punct:]]</td>
+      <td>[[:punct:]]</td>
+      <td></td>
+      <td>[[:punct:]]</td>
+      <td>\p{Punct}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>[-!&#34;#$%&amp;&#39;()*+,./:;&lt;=&gt;?@[\\\]^_`{|}~0-9A-Za-z]</th>
+      <td>[[:graph:]]</td>
+      <td>[[:graph:]]</td>
+      <td>[[:graph:]]</td>
+      <td></td>
+      <td>[[:graph:]]</td>
+      <td>\p{Graph}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>[-!&#34;#$%&amp;&#39;()*+,./:;&lt;=&gt;?@[\\\]^_`{|}~0-9A-Za-z ]</th>
+      <td>[[:print:]]</td>
+      <td>[[:print:]]</td>
+      <td>[[:print:]]</td>
+      <td></td>
+      <td>[[:print:]]</td>
+      <td>\p{Print}</td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <th>SP, HT</th>
+      <td>[[:blank:]]</td>
+      <td>[[:blank:]]</td>
+      <td>[[:blank:]]</td>
+      <td>[ \t]</td>
+      <td>[[:blank:]]</td>
+      <td>\p{Blank}</td>
+      <td>[ \t]</td>
+      <td>\s</td>
+      <td>[ \t]</td>
+    </tr>
+    <tr>
+      <th>SP, HT, CR, LF</th>
+      <td>printf &#34;[ \t\r\n]&#34;</td>
+      <td>printf &#34;[ \t\r\n]&#34;</td>
+      <td>[ \t\r\n]</td>
+      <td>[ \t\r\n]</td>
+      <td>[ \t\r\n]</td>
+      <td>[ \t\r\n]</td>
+      <td>[ \t\r\n]</td>
+      <td>[ \t\r\n]</td>
+      <td>\s</td>
+    </tr>
+    <tr>
+      <th>SP, HT, CR, LF, FF, VT</th>
+      <td>[[:space:]]</td>
+      <td>[[:space:]]</td>
+      <td>[[:space:]] or \s</td>
+      <td>\s</td>
+      <td>[[:space:]] or \s</td>
+      <td>\p{Space} or \s</td>
+      <td>\s</td>
+      <td>[ \t\r\n\%x0c\%x0b]</td>
+      <td>[ \t\r\n&amp;#x0c&amp;#x0b]</td>
+    </tr>
+    <tr>
+      <th>ASCII 0x00 - 0x1f, 0x7f</th>
+      <td>[[:cntrl:]]</td>
+      <td>[[:cntrl:]]</td>
+      <td>[[:cntrl:]]</td>
+      <td>[\x00-\x1f\x7f]</td>
+      <td>[[:cntrl:]]</td>
+      <td>\p{Cntrl}</td>
+      <td>[\x00-\x1f\x7f]</td>
+      <td>[\%x00-\%x1f\%x7f]</td>
+      <td>[&amp;#x00-&amp;#x1f&amp;#x7f]</td>
+    </tr>
+    <tr>
+      <th>Start of Line</th>
+      <td>^</td>
+      <td>^</td>
+      <td>^</td>
+      <td>^</td>
+      <td>^</td>
+      <td>^</td>
+      <td>^</td>
+      <td>^</td>
+      <td class="unsupported"></td>
+    </tr>
+    <tr>
+      <th>End of Line</th>
+      <td>$</td>
+      <td>$</td>
+      <td>$</td>
+      <td>$</td>
+      <td>$</td>
+      <td>$</td>
+      <td>$</td>
+      <td>$</td>
+      <td class="unsupported"></td>
+    </tr>
+    <tr>
+      <th>Any Character</th>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+      <td>.</td>
+    </tr>
+    <tr>
+      <th>Capturing Group</th>
+      <td>\(\)</td>
+      <td>()</td>
+      <td>()</td>
+      <td>()</td>
+      <td>()</td>
+      <td>()</td>
+      <td>()</td>
+      <td>\(\)</td>
+      <td>()</td>
+    </tr>
+    <tr>
+      <th>Zero or More</th>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>*</td>
+      <td>* or \{}</td>
+      <td>*</td>
+    </tr>
+    <tr>
+      <th>Exact N</th>
+      <td>\{n\}</td>
+      <td>{n}</td>
+      <td>{n}</td>
+      <td>{n}</td>
+      <td>{n}</td>
+      <td>{n}</td>
+      <td>{n}</td>
+      <td>\{n}</td>
+      <td>{n}</td>
+    </tr>
+    <tr>
+      <th>At Least N</th>
+      <td>\{n,\}</td>
+      <td>{n,}</td>
+      <td>{n,}</td>
+      <td>{n,}</td>
+      <td>{n,}</td>
+      <td>{n,}</td>
+      <td>{n,}</td>
+      <td>\{n,}</td>
+      <td>{n,}</td>
+    </tr>
+    <tr>
+      <th>At Least N and At Most M</th>
+      <td>\{n,m\}</td>
+      <td>{n,m}</td>
+      <td>{n,m}</td>
+      <td>{n,m}</td>
+      <td>{n,m}</td>
+      <td>{n,m}</td>
+      <td>{n,m}</td>
+      <td>\{n,m}</td>
+      <td>{n,m}</td>
+    </tr>
+    <tr>
+      <th>Zero or One</th>
+      <td>\{0,1\}</td>
+      <td>?</td>
+      <td>?</td>
+      <td>?</td>
+      <td>?</td>
+      <td>?</td>
+      <td>?</td>
+      <td>\? or \=</td>
+      <td>?</td>
+    </tr>
+    <tr>
+      <th>One or More</th>
+      <td>\{1,\}</td>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+      <td>+</td>
+      <td>\+</td>
+      <td>+</td>
+    </tr>
+    <tr>
+      <th>Alternation</th>
+      <td class="unsupported"></td>
+      <td>|</td>
+      <td>|</td>
+      <td>|</td>
+      <td>|</td>
+      <td>|</td>
+      <td>|</td>
+      <td>\|</td>
+      <td>|</td>
+    </tr>
+    <tr>
+      <th>Non-capturing group</th>
+      <td class="unsupported"></td>
+      <td class="unsupported"></td>
+      <td>(?:)</td>
+      <td>(?:)</td>
+      <td>(?:)</td>
+      <td>(?:)</td>
+      <td>(?:)</td>
+      <td>\%(\)</td>
+      <td class="unsupported"></td>
+    </tr>
+    <!-- positive lookahead assertion -->
+    <!-- negative lookahead assertion -->
+    <!-- positive lookbehind assertion -->
+    <!-- negative lookbehind assertion -->
+  </tbody>
+</table>
+</body>
+</html>
