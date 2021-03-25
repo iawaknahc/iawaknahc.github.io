@@ -7,7 +7,7 @@ verify_ssl = true
 
 [packages]
 jinja2 = "==2.10.1"
-pyyaml = "==5.1.2"
+pyyaml = "==5.4"
 
 [requires]
 python_version = "3.7"
